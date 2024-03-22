@@ -10,7 +10,7 @@ const gameBotFunction = function () {
         return mysteryNumber;
     }
 
-    //проверка на числом
+    //проверка на число
     function checkIsNumber(answerNum) {
         return !isNaN(parseFloat(answerNum)) && isFinite(answerNum);
     }
@@ -18,10 +18,13 @@ const gameBotFunction = function () {
     function guessNumber(tries) {
 
         randomGenerate(1, 100);
+        alert(mysteryNumber);
 
         //есть ли попытки
         while (tries > 0) {
             getResult = prompt('угадайте число от 1 до 100');
+
+            tries--;
     
             //нажата отмена
             if (getResult === null) {
@@ -47,11 +50,10 @@ const gameBotFunction = function () {
                     tries = 0;
                 }
             } else if (getResult > mysteryNumber) {
-                alert('Загаданное число больше. У вас осталось ' + (tries-1) + ' попыток');
+                alert('Загаданное число больше. У вас осталось ' + tries + ' попыток');
             } else if (getResult < mysteryNumber) {
-                alert('Загаданное число меньше. У вас осталось ' + (tries-1) + ' попыток');
+                alert('Загаданное число меньше. У вас осталось ' + tries + ' попыток');
             }
-            tries--;
         }
     
         game = confirm('попытки закончились. может, хотите попробовать снова?');
