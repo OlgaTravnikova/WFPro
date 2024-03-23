@@ -49,9 +49,9 @@ const gameBotFunction = function () {
                 } else {
                     tries = 0;
                 }
-            } else if (getResult > mysteryNumber) {
-                alert('Загаданное число больше. У вас осталось ' + tries + ' попыток');
             } else if (getResult < mysteryNumber) {
+                alert('Загаданное число больше. У вас осталось ' + tries + ' попыток');
+            } else if (getResult > mysteryNumber) {
                 alert('Загаданное число меньше. У вас осталось ' + tries + ' попыток');
             }
         }
